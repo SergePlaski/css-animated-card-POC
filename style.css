@@ -3,10 +3,13 @@
   --card-header-height: 62px;
   --card-data-header-height: 120px;
 
-  --card-border-color: hsl(219, 7%, 60%);
-  --card-header-color: hsl(230, 61%, 70%);
-  --card-content-header-color: hsl(39, 100%, 60%);
-  --card-content-detail-color: hsl(39, 100%, 70%);
+  --app-bg-color-dark: rgb(61 61 63);
+  --app-text-color-dark: rgb(255 255 255 / 0.8);
+  --card-bg-color-dark: rgb(63 63 67);
+  --card-header-color-dark: rgb(40 40 42);
+  --card-content-header-color-dark: rgb(54 54 56);
+  --card-content-detail-color-dark: rgb(180 180 201 / 0.16);
+  --card-divider-color-dark: rgb(186 186 191 / 0.4);
 
   color-scheme: dark light;
 }
@@ -15,13 +18,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, sans-serif;
 }
 
 body {
   padding: 16px;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--app-bg-color-dark);
+  color: var(--app-text-color-dark);
 }
 
 .cards__wrapper {
@@ -37,9 +40,10 @@ body {
   width: 330px;
   height: var(--card-height);
   position: relative;
-  border: 2px solid var(--card-border-color);
   border-radius: 8px;
   overflow: hidden;
+  background-color: var(--card-bg-color-dark);
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 4px 16px 0px;
 }
 
 .card__header {
@@ -49,8 +53,7 @@ body {
   display: grid;
   place-content: center;
   font-weight: 500;
-  background-color: var(--card-header-color);
-  color: #f8f8f8;
+  background-color: var(--card-header-color-dark);
 }
 
 .card__content {
@@ -60,7 +63,6 @@ body {
   margin-top: var(--card-header-height);
   display: flex;
   flex-direction: column;
-  /* border: 1px solid #888; */
   background-color: transparent;
   transition: top 400ms ease-in-out;
 }
@@ -71,10 +73,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 8px;
+  padding: 10px;
+  border-top: 1px solid var(--card-divider-color-dark);
   font-weight: bold;
-  background-color: var(--card-content-header-color);
-  color: #4a4a4a;
+  background-color: var(--card-content-header-color-dark);
 }
 
 .card__content_summary {
@@ -85,10 +87,10 @@ body {
 .card__content_detail {
   display: grid;
   gap: 1rem;
-  padding: 8px;
+  padding: 10px;
   overflow: hidden;
-  background-color: var(--card-content-detail-color);
-  color: #4a4a4a;
+  font-size: 0.95rem;
+  background-color: var(--card-content-detail-color-dark);
 }
 
 .card:hover {
