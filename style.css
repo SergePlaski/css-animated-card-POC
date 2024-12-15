@@ -3,13 +3,13 @@
   --card-header-height: 62px;
   --card-data-header-height: 120px;
 
-  --app-bg-color-dark: rgb(61 61 63);
-  --app-text-color-dark: rgb(255 255 255 / 0.8);
-  --card-bg-color-dark: rgb(63 63 67);
-  --card-header-color-dark: rgb(40 40 42);
-  --card-content-header-color-dark: rgb(54 54 56);
-  --card-content-detail-color-dark: rgb(180 180 201 / 0.16);
-  --card-divider-color-dark: rgb(186 186 191 / 0.4);
+  --app-bg-color-dark: hsl(230, 9%, 13%);
+  --app-text-color-dark: hsla(0, 0%, 100%, 0.8);
+  --card-bg-color-dark: hsl(230, 9%, 13%);
+  --card-header-color-dark: hsl(228, 9%, 21%);
+  --card-content-header-color-dark: hsl(228, 9%, 21%);
+  --card-content-detail-color-dark: hsl(230, 9%, 13%);
+  --card-divider-color-dark: hsla(240, 4%, 74%, 0.4);
 
   color-scheme: dark light;
 }
@@ -18,30 +18,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif
 }
 
 body {
+  min-height: 100vh;
+  min-height: 100dvh;
   padding: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 16px;
   background-color: var(--app-bg-color-dark);
   color: var(--app-text-color-dark);
-}
-
-.cards__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
 }
 
 .card {
   display: inline-block;
   width: 330px;
   height: var(--card-height);
+  max-height: var(--card-height);
   position: relative;
-  border-radius: 8px;
   overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--card-divider-color-dark);
   background-color: var(--card-bg-color-dark);
   box-shadow: rgba(0, 0, 0, 0.7) 0px 4px 16px 0px;
 }
@@ -115,9 +118,9 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .cards__wrapper {
+  body {
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
   }
 }
 
